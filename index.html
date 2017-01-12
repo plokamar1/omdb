@@ -6,7 +6,7 @@
     <body>
     <body ng-app="app1" ng-controller="ctrl1">
 
-        <div class="searchBar">
+
         <div class="searchBar" >
             <div class="container-fluid">
                 <div class="row">
@@ -19,6 +19,16 @@
             </div>
         </div>
 
+        <div class="results" >
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-1" ng-repeat="movie in movies"  >
+                        <p>{{movie.Title}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>{{dataReady}}</p>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
