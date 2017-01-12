@@ -1,39 +1,40 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Omdb Search</title>
-    </head>
-    <body>
-    <body ng-app="app1" ng-controller="ctrl1">
+
+<head>
+    <title>Omdb Search</title>
+</head>
 
 
-        <div class="searchBar" >
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4 col-md-offset-4">
-                        <input type="text" placeholder="Title search..." class=" form-control" ng-model="title">
-                        <br>
-                        <input type="button" class="btn btn-primary center-block" value="Search!" ng-click="onClick()" >
-                    </div>
+<body ng-app="app1" ng-controller="ctrl1">
+
+
+    <div class="searchBar">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <input type="text" placeholder="Title search..." class=" form-control" ng-model="title">
+                    <br>
+                    <input type="button" class="btn btn-primary center-block" value="Search!" ng-click="onClick()">
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="results" >
-            <div class="container-fluid">
-                
-                    <div class="col-md-2" ng-repeat="movie in movies | orderBy : '-Year'" ng-if="movies != 0"  >
-                        <img class="img img-responsive " src="{{movie.Poster}}">
-                        <p class="center-block" >{{movie.Title}}</p>
-                        
-                    </div>
-                
+    <div class="results">
+        <div class="container-fluid">
+            <div class="col-md-2" ng-repeat="movie in movies | orderBy : '-Year'" ng-if="movies != 0">
+                <img class="img img-responsive " src="{{movie.Poster}}">
+                <p class="center-block">{{movie.Title}}</p>
             </div>
         </div>
-        
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-        <script src="js/dataget.js"></script>
-    </body>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="js/dataget.js"></script>
+</body>
+
 </html>
