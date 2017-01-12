@@ -4,24 +4,23 @@
         <title>Omdb Search</title>
     </head>
     <body>
-    <body ng-app="app1">
-        <script src="js/dataget.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <body ng-app="app1" ng-controller="ctrl1">
 
         <div class="searchBar">
-        <div class="searchBar" ng-controller="ctrl1">
+        <div class="searchBar" >
             <div class="container-fluid">
                 <div class="row">
                     
                     <input type="text" placeholder="Title search..." ng-model="title">
                     <button class="btn btn-primary button" ng-click="onClick" >Search!</button>
-
+                    <p>{{title}}</p>         
                 </div>
             </div>
         </div>
 
-
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="js/dataget.js"></script>
     </body>
 </html>
