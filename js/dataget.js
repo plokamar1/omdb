@@ -7,16 +7,37 @@ var movies = null;
 
 app1.controller("ctrl1", function ($scope,$http) {
     $scope.onClick = function () {
+    	var site = 'http://www.omdbapi.com/?';
+    	var resp = '&r=json';
+		var type = '';
+		var search = 's='+$scope.title;
+    	
+    	if($scope.movieType){
+    		type = '&type='+$scope.movieType;
+    	}
+
+    	var wholeUrl = site + search + resp + type;
 
         if (titleBef != $scope.title) {
 
-            $http({method : 'GET', url:'http://www.omdbapi.com/?&type=movie&r=json&s=' + $scope.title})
-              .success(function (data) {
-                console.log(data.length());
+            $http({method : 'GET', url: wholeUrl})
+            .success(function (data) {
+                console.log(data);
                 $scope.movies = data.Search;
               });
         }
+
     };
 
+});
 
+app1.directive('imageOnLoad', function() {
+    return {
+        restrict: 'A',
+        link: function(scope, element, attrs) {
+            element.bind('load', function() {
+                return 1;
+            });
+        }
+    };
 });
