@@ -31,11 +31,18 @@
 
     <div class="results">
         <div class="container-fluid">
-            <div class="col-md-2" ng-repeat="movie in movies | orderBy : '-Year' " ng-if="movies != 0">
+            <div class="col-md-2 movieBlock" ng-repeat="movie in movies | orderBy : '-Year' " ng-if="movies != 0">
+
+              <div class="poster">
                 <img class="img img-responsive" src="{{movie.Poster}}" imageOnLoad>
-                <p class="center-block">Title:{{movie.Title}}</p>
+              </div>
+
+              <div class="info">
+                <p class="center-block"><span class="text-left">Title:</span><span class="text-right">{{movie.Title}}</span></p>
                 <p class="center-block">Year:{{movie.Year}}</p>
                 <p class="center-block">IMDB ID:{{movie.imdbID}}</p>
+              </div>
+
             </div>
         </div>
     </div>
@@ -44,7 +51,7 @@
         crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="js/dataget.js"></script>
-    
+
 </body>
 
 </html>
